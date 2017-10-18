@@ -1,12 +1,12 @@
 # wordcloud
-#### wordcloud--通过加载图片自定义词云的形状
-before
-<img src="https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/heart.jpg" width = "300" height = "200" align=center/>
-![image](https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/heart.jpg)
-after
-![image](https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/wordcloud_heart.jpg)
-before
-![image](https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/jessica_1.jpg)
-![image](https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/jessica_2.jpg)
-after
-![image](https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/wordcloud_ssica.jpg)
+## wordcloud--通过加载图片自定义词云的形状
+
+###示例1
+<img src="https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/heart.jpg" width = "300" height = "300" align=center/>
+<img src="https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/wordcloud_heart.jpg" width = "300" height = "300" align=center/>
+
+###示例2
+
+<img src="https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/jessica_1" width = "300" height = "500" align=center/>
+<img src="https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/jessica_2" width = "300" height = "500" align=center/>
+<img src="https://raw.githubusercontent.com/Qt7mira/MarkDownImg/master/img/wordcloud/wordcloud_ssica.jpg" width = "300" height = "500" align=center/>
