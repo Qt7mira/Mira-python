@@ -27,9 +27,7 @@ min_count = 1  # 词频低于min_count的舍弃
 
 words = {i: j for i, j in words.items() if j >= min_count}
 id2word = {i + 1: j for i, j in enumerate(words)}  # id映射到词，未登录词全部用0表示
-max = len(id2word)
-print(max)
-word2id = {j: (i-1)/(max-1) for i, j in id2word.items()}  # 词映射到id
+word2id = {j: i for i, j in id2word.items()}  # 词映射到id
 
 print(len(word2id))
 
