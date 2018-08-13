@@ -15,6 +15,7 @@ def load_image2(path):
 def load_data():
     x = []
     y = []
+    names = []
     data_path = "/Users/panqiutong/Downloads/lfw"
     label = 0
     for folder in os.listdir(data_path):
@@ -24,11 +25,14 @@ def load_data():
             img = load_image2(os.path.join(folder_path, file))
             x.append(img)
             y.append(label)
+
+        names.append(folder)
         label += 1
 
         # if label >= 10:
         #     break
-    return x, y
+    print("all label", label)
+    return x, y, names
 
 
 def crop_and_downsample(originalX, downsample_size=32):
@@ -58,12 +62,21 @@ def crop_and_downsample(originalX, downsample_size=32):
     return newX
 
 
-X, Y = load_data()
+X, Y, names = load_data()
+
+with open('model/names_txt', 'a', encoding='utf8') as outfile:
+    for i in names:
+        outfile.write(i)
+        outfile.write('\n')
+
 print("数据加载完成")
 X = np.vstack([np.array(list(X))])
 
+print(Y[0:20])
 Y = np_utils.to_categorical(Y)
-out_dim = len(Y)
+print(Y[0:20])
+out_dim = len(Y[0])
+print("维数", out_dim)
 Y = np.array(Y)
 
 x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)
