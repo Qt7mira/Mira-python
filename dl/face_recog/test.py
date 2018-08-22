@@ -54,41 +54,31 @@ def calc_o(vec_1, vec_2):
     return dist
 
 
-x, y = load_data()
+# x, y = load_data()
 print("数据加载完成")
 fm = FrModel()
-x = [fm.img_2_vec(i) for i in x]
+
+path = "/Users/panqiutong/Downloads/lfw/George_W_Bush/George_W_Bush_0001.jpg"
+vec_1 = fm.img_path_2_vec(path)
+
+m = 1
+for i in range(2, 6):
+    path = "/Users/panqiutong/Downloads/lfw/George_W_Bush/George_W_Bush_000" + str(i) + ".jpg"
+    vec_1 += fm.img_path_2_vec(path)
+    m += 1
+vec_1 = vec_1 / m
+
 
 time_point_1 = datetime.datetime.now()
-# path_2 = "/Users/panqiutong/Downloads/lfw/Marissa_Jaret_Winokur/Marissa_Jaret_Winokur_0002.jpg"
-path_2 = "/Users/panqiutong/Downloads/lfw/George_W_Bush/George_W_Bush_0002.jpg"
+path_2 = "/Users/panqiutong/Downloads/lfw/George_W_Bush/George_W_Bush_0008.jpg"
 vec_2 = fm.img_path_2_vec(path_2)
 print(vec_2)
 time_point_2 = datetime.datetime.now()
 print("转向量", str(time_point_2 - time_point_1))
 
-result = [calc_cos(i, vec_2) for i in x]
-min_r = max(result)
-print(min_r)
-who = y[result.index(min_r)]
-print(who)
-print(result[y.index("George_W_Bush")])
+result = [calc_cos(vec_1, vec_2)]
+print(result)
 time_point_3 = datetime.datetime.now()
 print("计算相似度", str(time_point_3 - time_point_2))
 print("总时长", str(time_point_3 - time_point_1))
 
-
-# time_point_1 = datetime.datetime.now()
-# path_2 = "/Users/panqiutong/Downloads/lfw/George_W_Bush/George_W_Bush_0002.jpg"
-# # path_2 = "/Users/panqiutong/Downloads/lfw/Paul_Wilson/Paul_Wilson_0001.jpg"
-# img2 = imread(path_2)
-# result = fm.predict(img2)
-# print(result)
-# print(np.max(result))
-# location = np.where(result == np.max(result))[1][0]
-# print(location)
-# # print(y.index("Paul_Wilson"))
-# who = y[location]
-# print(who)
-# time_point_3 = datetime.datetime.now()
-# print("总时长", str(time_point_3 - time_point_1))

@@ -8,14 +8,7 @@ from scipy.misc import *
 import matplotlib.pylab as plt
 
 # dealing with tar files
-import tarfile, gzip
-
-# extracting data about faces/people
-import csv
-
-# nice stuff
-import os, re
-from pprint import pprint
+import tarfile
 
 
 def load_image(tgz_file, basename, name, number):
@@ -27,6 +20,7 @@ def load_image(tgz_file, basename, name, number):
 
 def load_image2(path, basename, name, number):
     filename = path + "{0}/{1}/{1}_{2:04d}.jpg".format(basename, name, int(number))
+    print(filename)
     return imread(filename)
 
 # Load image:
@@ -60,3 +54,4 @@ def extract_features(z):
 
 features = extract_features(z)
 print(np.shape(features))
+
